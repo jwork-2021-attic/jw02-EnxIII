@@ -1,0 +1,47 @@
+@startuml
+
+entity Scene
+entity BufferedWriter
+entity Geezer
+entity Sorter
+entity BubbleSorter
+entity Line
+
+entity Gourd_ONE
+entity Gourd_TWO
+entity Gourd_THREE
+entity Gourd_FOUR
+entity Gourd_FIVE
+entity Gourd_SIX
+entity Gourd_SEVEN
+
+Gourd_ONE -> Line : incorporate
+Gourd_TWO -> Line : incorporate
+Gourd_THREE -> Line : incorporate
+Gourd_FOUR -> Line : incorporate
+Gourd_FIVE -> Line : incorporate
+Gourd_SIX -> Line : incorporate
+Gourd_SEVEN -> Line : incorporate
+
+Geezer -> Geezer : generate instance
+Sorter -> BubbleSorter : Point to
+Sorter <- Geezer : Set Sorter 
+|||
+Scene -> Geezer ++: <LineUp> Func_Call
+Geezer -> Line ++ : <toArray> Func_Call
+|||
+return Linable Array
+Geezer -> Sorter ++ : <load && sort> Func_Call
+Sorter -> BubbleSorter ++ : <load && sort> Func_Call
+|||
+return sort log
+return sort log
+return sort log 
+|||
+BufferedWriter -> BufferedWriter : generate instance
+Scene -> BufferedWriter ++ : <write/flush/close> Func_Call
+|||
+return
+|||
+
+@enduml
