@@ -24,6 +24,7 @@ Gourd_SIX -> Line : incorporate
 Gourd_SEVEN -> Line : incorporate
 
 Geezer -> Geezer : generate instance
+BubbleSorter -> BubbleSorter : generate instance
 Sorter -> BubbleSorter : Point to
 Sorter <- Geezer : Set Sorter 
 |||
@@ -36,7 +37,7 @@ Sorter -> BubbleSorter ++ : <load && sort> Func_Call
 |||
 return sort log
 return sort log
-return sort log 
+return line status per change
 |||
 BufferedWriter -> BufferedWriter : generate instance
 Scene -> BufferedWriter ++ : <write/flush/close> Func_Call

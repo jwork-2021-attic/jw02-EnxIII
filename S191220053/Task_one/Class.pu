@@ -1,6 +1,7 @@
 @startuml
 
 interface Linable{
+    __ @method __
     +void setPosition(Position position)
     +Position getPosition()
     +int getValue()
@@ -8,35 +9,34 @@ interface Linable{
 
 
 class Line{
+    __@members__
     -Position[] positions
-    
+    __@method__
     +void put(Linable linable, int i)
     +Linable get(int i)
 }
 
 
 class Position{
+    __ @members __
     -Linable linable
-    
+    __@method__
     +void setLinable(Linable linable)
-    __ @Override __
     +String toString()
     +Linable[] toArray()
 }
 
 enum Gourd {
+    __@members__
     -final int r
     -final int g
     -final int b
     -Position position
 
+    __ @method __
     +int rank()
     +void swapPosition(Gourd another)
-
-    __ @Static __
     +static Gourd getGourdByRank(int rank)
-
-    __ @Override __
     +String toString()
     +void setPosition(Position position)
     +Position getPosition()
@@ -44,9 +44,10 @@ enum Gourd {
 }
 
 class Geezer{
+    __ @members__
     -static Geezer theGeezer
     -Sorter sorter
-    
+    __@method__
     +static Geezer getTheGeezer()
     +void setSorter(Sorter sorter)
     +String lineUp(Line line)
@@ -56,25 +57,27 @@ class Geezer{
 }
 
 interface Sorter{
+    __@method__
     +void load(int[] elements)
     +void sort()
     +String getPlan()
 }
 
 class BubbleSorter{
+    __@members__
     -int[] a
     -String plan = ""
 
+    __ @method __
     -void swap(int i, int j)
-    __ @Override __
     +void load(int[] a)
     +void sort()
     +String getPlan()
 }
 
 Sorter <|-- BubbleSorter
-Geezer *-- Sorter
-Position *-- Linable
+Geezer o-- BubbleSorter
+Position o-- Gourd
 Gourd o-- Position
 Gourd --|> Linable
 Line *-- Position
