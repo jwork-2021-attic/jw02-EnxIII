@@ -11,7 +11,8 @@ public class Scene {
         Line line = new Line(Scene.tasksize);
         line.randomLoadLinable(faerie);
 
-        Sorter sorter = new BubbleSorter();
+        Sorter sorter = new QuickSorter();
+        // Sorter sorter = new BubbleSorter();
         Snake snake = new Snake();
 
         snake.loadSorter(sorter);
