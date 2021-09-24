@@ -5,8 +5,12 @@ import java.util.Random;
 public class Line implements Sortable, Animable{
     private Linable[] list;
 
-    public Line(int size){
-        this.list = new Linable[size];
+    public Line(int length){
+        this.list = new Linable[length];
+    }
+
+    public int length(){
+        return list.length;
     }
 
     public void randomLoadLinable(Faerie faerie){
@@ -23,6 +27,10 @@ public class Line implements Sortable, Animable{
 
     public void putLinable(int index, Linable linable){
         this.list[index] = linable;
+    }
+
+    public Linable getLinable(int index){
+        return this.list[index];
     }
 
     @Override
