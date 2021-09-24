@@ -12,18 +12,33 @@ public class Faerie {
         this.list = new ColorBlock[len];
         File pngfile = new File("c256.png");
         BufferedImage image = ImageIO.read(pngfile);
-        int pixel = 0, prepixel = 0, minx = image.getMinX(), miny = image.getMinY(), index = 0;
+        int pixel = 0, prepixel = 0, minx = image.getMinX() + 1, miny = image.getMinY() + 1, index = 0;
+        boolean flagx = true, flagy = true;
         for (int y = miny + 1, ye = image.getHeight(); y < ye; ++y){
             // y orient consecutive
             if (image.getRGB(minx, y) == image.getRGB(minx, y - 1)){
-                pixel = image.getRGB(minx, y);
-                for (int x = image.getMinX() + 1, xe = image.getWidth(); x < xe; ++x){
-                    pixel = image.getRGB(x, y);
+                if (flagy){
+                    flagx = true;
+                    prepixel = image.getRGB(minx, y);
+                    for (int x = image.getMinX() + 1, xe = image.getWidth(); x < xe; ++x){
+                        pixel = image.getRGB(x, y);
                     // x orient consecutive
-                    if (pixel == prepixel)
-                        this.genColorBlock(index++, pixel);
-                    prepixel = pixel;
+                        if (pixel == prepixel){
+                            if (flagx){
+                                this.genColorBlock(index++, pixel);
+                                flagx = false;
+                            }
+                        }
+                        else{
+                            flagx = true;
+                        }
+                        prepixel = pixel;
+                    }
+                    flagy = false;
                 }
+            }
+            else{
+                flagy = true;
             }
         }
     }

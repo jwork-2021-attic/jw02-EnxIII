@@ -23,9 +23,9 @@ public class BubbleSorter implements Sorter{
         if (buffer == null)
             return;
         String temp = "";
-        for (int iter = 0; iter < buffer.length; ++iter){
-            if (!func.cmp(buffer[iter], buffer[iter + 1])){
-                temp += swap(iter, iter + 1);
+        for (int iter = 1; iter < buffer.length; ++iter){
+            if (!func.cmp(buffer[iter - 1], buffer[iter])){
+                temp += swap(iter - 1, iter);
             }
         }
         this.log = temp;
