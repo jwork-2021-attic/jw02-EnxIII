@@ -1,23 +1,6 @@
 package S191220053.Task_two;
 
-public class BubbleSorter implements Sorter{
-    private int[] buffer;
-    private String log;
-
-    private String swap(int a, int b){
-        int temp = buffer[a];
-        buffer[a] = buffer[b];
-        buffer[b] = temp;
-        return (a + "<->" + b + '\n');
-    }
-
-    @Override
-    public void load(int[] array){
-        //if (buffer == null || buffer.length < array.length)
-        //    this.buffer = new int[array.length];
-        buffer = array.clone();
-    }
-
+public class BubbleSorter extends BasicSorter{
     @Override
     public void sort(Comparer func){
         if (buffer == null)
@@ -31,10 +14,5 @@ public class BubbleSorter implements Sorter{
             }
         }
         this.log = temp;
-    }
-
-    @Override
-    public String getSortScheme(){
-        return this.log;
     }
 }
