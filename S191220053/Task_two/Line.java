@@ -19,8 +19,7 @@ public class Line implements Sortable, Animable{
         Random random = new Random(System.currentTimeMillis());
         for (int k = 1, r; k < list.length; ++k){
             r = random.nextInt(k);
-            if (r != k)
-                swap(k, r);
+            swap(k, r);
         }
     }
 
