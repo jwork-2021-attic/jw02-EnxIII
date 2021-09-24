@@ -27,6 +27,8 @@ public class Faerie {
                             if (flagx){
                                 this.genColorBlock(index++, pixel);
                                 flagx = false;
+                                if (index == Scene.tasksize)
+                                    return;
                             }
                         }
                         else{
@@ -80,7 +82,7 @@ public class Faerie {
         
         @Override
         public String getRGBInfo(){
-            return "\033[48;2;" + this.r + ";" + this.g + ";" + this.b + ";38;2;0;0;0m    " + this.getRank() + "  \033[0m";
+            return "\033[48;2;" + this.r + ";" + this.g + ";" + this.b + ";38;2;0;0;0m"+ String.format("%1$5s", this.getRank()) + "   \033[0m";
         }
     }
     

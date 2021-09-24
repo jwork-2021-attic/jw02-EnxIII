@@ -5,9 +5,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Scene {
+    static int tasksize = 32;
     public static void main(String[] args) throws IOException{
-        Faerie faerie = new Faerie(256);
-        Line line = new Line(256);
+        Faerie faerie = new Faerie(Scene.tasksize);
+        Line line = new Line(Scene.tasksize);
         line.randomLoadLinable(faerie);
 
         Sorter sorter = new BubbleSorter();
