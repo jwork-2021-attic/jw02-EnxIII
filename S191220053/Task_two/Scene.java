@@ -27,7 +27,7 @@ public class Scene {
 
         String frame = engine.getFrames();
         BufferedWriter writer;
-        writer = new BufferedWriter(new FileWriter("result.txt"));
+        writer = new BufferedWriter(new FileWriter("S191220053/Task_two/result.txt"));
         writer.write(frame);
         writer.flush();
         writer.close();
