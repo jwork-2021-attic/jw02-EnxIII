@@ -12,8 +12,6 @@ public class Line implements Sortable, Animable{
     public void randomLoadLinable(Faerie faerie){
         if (faerie == null)
             return;
-        if (list.length != faerie.size())
-            list = new Linable[faerie.size()];
         for (int k = 0; k < list.length; ++k)
             this.list[k] = faerie.getLinable(k);
         Random random = new Random(System.currentTimeMillis());
