@@ -76,8 +76,8 @@ class BubbleSorter{
 }
 
 Sorter <|-- BubbleSorter
-Geezer o-- BubbleSorter
-Position o-- Gourd
+Geezer o-- Sorter
+Position o-- Linable
 Gourd o-- Position
 Gourd --|> Linable
 Line *-- Position
