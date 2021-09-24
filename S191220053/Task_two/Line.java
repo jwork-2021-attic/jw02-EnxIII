@@ -1,5 +1,7 @@
 package S191220053.Task_two;
 
+import java.util.Random;
+
 public class Line implements Sortable, Animable{
     private Linable[] list;
 
@@ -7,13 +9,19 @@ public class Line implements Sortable, Animable{
         this.list = new Linable[size];
     }
 
-    public void loadLinable(Faerie faerie){
+    public void randomLoadLinable(Faerie faerie){
         if (faerie == null)
             return;
         if (list.length != faerie.size())
             list = new Linable[faerie.size()];
-        for (int k = 0, e = faerie.size(); k < e; ++k)
-            this.putLinable(k, faerie.getLinable(k));
+        for (int k = 0; k < list.length; ++k)
+            this.list[k] = faerie.getLinable(k);
+        Random random = new Random(System.currentTimeMillis());
+        for (int k = 1, r; k < list.length; ++k){
+            r = random.nextInt(k);
+            if (r != k)
+                swap(k, r);
+        }
     }
 
     public void putLinable(int index, Linable linable){

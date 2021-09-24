@@ -8,7 +8,7 @@ public class Scene {
     public static void main(String[] args) throws IOException{
         Faerie faerie = new Faerie(256);
         Line line = new Line(256);
-        line.loadLinable(faerie);
+        line.randomLoadLinable(faerie);
 
         Sorter sorter = new BubbleSorter();
         Snake snake = new Snake();
