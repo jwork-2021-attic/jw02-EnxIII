@@ -8,7 +8,7 @@ public class BubbleSorter implements Sorter{
         int temp = buffer[a];
         buffer[a] = buffer[b];
         buffer[b] = temp;
-        return (a + " <-> " + b + '\n');
+        return (a + "<->" + b + '\n');
     }
 
     @Override
