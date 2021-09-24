@@ -12,16 +12,15 @@ public class QuickSorter extends BasicSorter{
     private void quicksort(int left, int right, Comparer func){
         if (right - left <= 1)
             return;
-        int pivot = left, lboudary = left + 1;
+        int pivot = left, lboudary = left;
         for (int k = left + 1; k < right; ++k){
             if (!func.cmp(this.buffer[pivot], this.buffer[k])){
-                if (lboudary != k){
+                if (++lboudary != k)
                     this.log += swap(lboudary, k);
-                    ++lboudary;
-                }
             }
         }
-        this.log += swap(pivot, lboudary);
+        if (pivot != lboudary)
+            this.log += swap(pivot, lboudary);
         quicksort(left, lboudary, func);
         quicksort(lboudary + 1, right, func);
     }
