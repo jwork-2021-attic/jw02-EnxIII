@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Scene {
-    static int tasksize = 32;
+    static int tasksize = 64;
     public static void main(String[] args) throws IOException{
         Faerie faerie = new Faerie(Scene.tasksize);
         Line line = new Line(Scene.tasksize);
