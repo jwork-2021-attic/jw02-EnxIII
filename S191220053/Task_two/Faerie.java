@@ -28,9 +28,8 @@ public class Faerie {
         }
     }
 
-    public Linable getLinable(int rank){
-        return this.list[rank];
-    }
+    public Linable getLinable(int rank){ return this.list[rank];}
+    public int size(){ return this.list.length;}
 
     private void genColorBlock(int index, int rgb){
         if (index < 0 || index > this.list.length)

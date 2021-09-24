@@ -7,6 +7,15 @@ public class Line implements Sortable, Animable{
         this.list = new Linable[size];
     }
 
+    public void loadLinable(Faerie faerie){
+        if (faerie == null)
+            return;
+        if (list.length != faerie.size())
+            list = new Linable[faerie.size()];
+        for (int k = 0, e = faerie.size(); k < e; ++k)
+            this.putLinable(k, faerie.getLinable(k));
+    }
+
     public void putLinable(int index, Linable linable){
         this.list[index] = linable;
     }
