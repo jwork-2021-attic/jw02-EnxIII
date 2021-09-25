@@ -101,7 +101,7 @@ abstract class BasicSorter implements Sorter{
     #String swap(int a, int b)
     __@interface__
     +void load(int[] array)
-    +void sort(Comparer func)
+    +abstract void sort(Comparer func)
     +String getSortScheme()
 }
 
