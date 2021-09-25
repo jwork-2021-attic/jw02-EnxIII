@@ -4,3 +4,16 @@
 
 - 相比Task two中, 只增加了一个Matrix类 (其实可以不加的, 只需要把Line类所实现的Animable接口中的getFrame函数稍微修改即可, 但是为了展示使用接口带来的优越性, 所以这里新增了一个类)
 
+
+
+
+#### 可视化视频连接
+1. ##### 快速排序
+
+    [![asciicast](https://asciinema.org/a/vpveKF5X5B8EkTTrsLlISoYs3.svg)](https://asciinema.org/a/vpveKF5X5B8EkTTrsLlISoYs3)
+
+    
+
+2. ##### 冒泡排序
+
+    [![asciicast](https://asciinema.org/a/TzKF0xQJdHOR3sTcDgJdbtB3Q.svg)](https://asciinema.org/a/TzKF0xQJdHOR3sTcDgJdbtB3Q)

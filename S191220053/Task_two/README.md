@@ -11,11 +11,11 @@
 #### 可视化视频连接
 1. ##### 快速排序
 
-    [![asciicast](https://asciinema.org/a/2lSyjGp2BfFnRTW1XQ4LDmdAd.svg)](https://asciinema.org/a/2lSyjGp2BfFnRTW1XQ4LDmdAd)
+    [![asciicast](https://asciinema.org/a/yDFYJFJjt460gEkg1zde695i1.svg)](https://asciinema.org/a/yDFYJFJjt460gEkg1zde695i1)
 
     
 
 2. ##### 冒泡排序
 
-    
+    [![asciicast](https://asciinema.org/a/Xj5QhMpYCCMFJHOUHCVqniCvd.svg)](https://asciinema.org/a/Xj5QhMpYCCMFJHOUHCVqniCvd)
 
