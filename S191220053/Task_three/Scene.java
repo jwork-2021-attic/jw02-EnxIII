@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import S191220053.Task_two.Sorter;
 import S191220053.Task_two.Faerie;
+import S191220053.Task_two.QuickSorter;
 import S191220053.Task_two.Comparer;
 import S191220053.Task_two.Snake;
 import S191220053.Task_two.BubbleSorter;
@@ -20,7 +21,8 @@ public class Scene {
         Matrix line = new Matrix(Scene.taskrow, Scene.taskcol);
         line.randomLoadLinable(faerie);
 
-        Sorter sorter = new BubbleSorter();
+        // Sorter sorter = new BubbleSorter();
+        Sorter sorter = new QuickSorter();
         Snake snake = new Snake();
 
         snake.loadSorter(sorter);
@@ -36,7 +38,7 @@ public class Scene {
 
         String frame = engine.getFrames();
         BufferedWriter writer;
-        writer = new BufferedWriter(new FileWriter("S191220053/Task_three/result.txt"));
+        writer = new BufferedWriter(new FileWriter("Task_three_" + sorter.getClass().getName().split("\\.")[2] + ".txt"));
         writer.write(frame);
         writer.flush();
         writer.close();

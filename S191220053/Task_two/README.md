@@ -4,4 +4,18 @@
 
 - Faeria类主要是一个数组, 用来储存256个“Gourd”, 给予其Rank, 此外没有其他作用。
 
+
+
+
+
+#### 可视化视频连接
+1. ##### 快速排序
+
+    [![asciicast](https://asciinema.org/a/2lSyjGp2BfFnRTW1XQ4LDmdAd.svg)](https://asciinema.org/a/2lSyjGp2BfFnRTW1XQ4LDmdAd)
+
     
+
+2. ##### 冒泡排序
+
+    
+
