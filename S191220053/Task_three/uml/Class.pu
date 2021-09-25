@@ -1,0 +1,144 @@
+@startuml
+
+
+
+class Faerie{
+    +Faerie(int len)
+    +Linable getLinable(int rank)
+    +int size()
+    -void genColorBlock(int index, int rgb)
+}
+
+class ColorBlock implements Linable{
+    __@members__
+    -int r
+    -int g
+    -int b
+    -int index
+
+    __@methods__
+    -ColorBlock(int index, int r, int g, int b)
+    -void modifyColorBlock(int newindex, int newr, int newg, int newb)
+
+    __@interface__
+    +int getRank()
+    +String getRGBInfo()
+}
+
+interface Linable {
+    +int getRank()
+    +String getRGBInfo()
+}
+
+class Line implements Sortable, Animable{
+    __@members__
+    -Linable[] list
+    __@methods__
+    +Line(int length)
+    +int length()
+
+    +void randomLoadLinable(Faerie faerie)
+    +void putLinable(int index, Linable linable)
+    +Linable getLinable(int index)
+
+    __@interface__
+    +int[] toIntArray()
+    +void swap(int a, int b)
+    +String getFrame()
+}
+
+interface Sortable {
+    +int[] toIntArray()
+}
+
+interface Animable{
+    +void swap(int a, int b)
+    +String getFrame()   
+}
+
+class AnimateEngine {
+    __@members__
+    -String frames
+    -String scheme
+    -Animable sketch
+    __@methods__
+    +void loadAnimable(Animable sketch)
+    +void loadScheme(String scheme)
+    +void rendering()
+    +String getFrames()
+}
+
+class Snake {
+    __@members__
+    -String log
+    -Sorter sorter
+    -Sortable sortable
+    __@members__
+    +void loadSorter(Sorter sorter)
+    +void loadSortable(Sortable sortable)
+    +void sortUp(Comparer comparer)
+    +String getSortScheme()
+}
+
+enum Comparer{
+    greater
+    smaller
+
+    +abstract boolean cmp(int a, int b)
+}
+
+interface Sorter{
+    +void load(int[] array)
+    +void sort(Comparer func)
+    +String getSortScheme()
+}
+
+abstract class BasicSorter implements Sorter{
+    __@members__
+    #int[] buffer
+    #String log
+    __@methods__
+    #String swap(int a, int b)
+    __@interface__
+    +void load(int[] array)
+    +void sort(Comparer func)
+    +String getSortScheme()
+}
+
+class BubbleSorter extends BasicSorter{
+    __@interface__
+    +void sort(Comparer func)
+}
+
+class QuickSorter extends BasicSorter{
+    __@methods__
+    -void quicksort(int left, int right, Comparer func)
+    __@interface__
+    +void sort(Comparer func)
+}
+
+class Matrix implements Sortable, Animable{
+    __@members__
+    -int row
+    -int col
+    -Line[] lines
+
+    __@methods__
+    +Matrix(int row, int col)
+    +void randomLoadLinable(Faerie faerie)
+
+    __@interface__
+    +int[] toIntArray()
+    +void swap(int a, int b)
+    +String getFrame()
+}
+
+
+ColorBlock --* Faerie
+Linable --o Line
+AnimateEngine o-- Animable
+Snake *-- Sortable
+Snake *-- Sorter
+Matrix *-- Line
+
+@enduml
